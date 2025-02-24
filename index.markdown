@@ -1,8 +1,8 @@
 ---
-title: "Nbgrader: Automating Jupyter Notebook Grading"
+title: "nbgrader: Automating Jupyter Notebook Grading"
 layout: home
 date: 2025-02-24
-author: "Your Name"
+author: "Smit Bambhroliya, Sunay Desai, Path Bhimani"
 categories: [Jupyter, Grading, Automation]
 permalink: /
 ---
