@@ -33,6 +33,9 @@ Install nbgrader via pip:
 ```bash
 pip install nbgrader
 ```
+
+![](./assets/ss/ss3.jpg)
+
 Or if you use [Jupyter Notebook](https://jupyter.org/) via [Anaconda](https://www.anaconda.com/download):
 
 ```bash
@@ -47,11 +50,34 @@ conda install -c conda-forge nbgrader
 Configure nbgrader:
 
 ```bash
-nbgrader quickstart my_course
+nbgrader quickstart es114
 ```
+
+![](./assets/ss/ss4.jpg)
 
 This sets up the necessary directory structure for an nbgrader course.  
 
+## **Creating assignments using code and API**
+
+### **1. Creating the assignment using API**
+
+You can create an assigment directly from the jupyter by clicking on **+ Add new assignment...**
+
+![](./assets/ss/ss6.jpg)
+
+Then you can add the name and other details of the assignment.
+
+![](./assets/ss/ss7.jpg)
+
+### **2. Creating assignments using terminal**
+
+You can also create the assignment by typing the following code in the terminal
+
+```
+nbgrader generate_assignment ps1
+```
+![](./assets/ss/ss5.jpg)
+Here, ps1 is the name of the assignment.
 ## **Key Features & Explanation**
 
 ### 1. Automated Grading  
@@ -106,57 +132,36 @@ Nbgrader can be combined with external tools like **Turnitin** or **MOSS** for a
 
 ## **Code Examples**
 
-### Example 1: Creating an Auto-Graded Question  
+### Creating an Auto-Graded Question  
 ```python
 # Autograded answer
-def square(x):
-    return x ** 2  # Expected answer
+def squares(n):
+    """Compute the squares of the numbers from 1 to n, 
+    such that the ith element of the returned list equals to i^2."""
+    ### BEGIN SOLUTION
+    if n<1:
+        raise valueError("n must be greater than or equal to 1")
+    return[i**2 for i in range(1, n+1)]
 
 # Test case
-assert square(3) == 9
+assert square(3) == [9]
 ```
+![](./assets/ss/ss8.jpg)
 
-### Example 2: Collecting and Grading Assignments  
-```bash
-# Collect all student submissions
-nbgrader collect
+### Releasing the assignment
 
-# Automatically grade submissions
-nbgrader autograde assignment_1
-```
+You can release the assignment by clicking on the highlighted button. 
+![](./assets/ss/ss9.png)
+After that, it will successfully create the student version of the assignment. You can click on the highlighted button to release the assignment.
+![](./assets/ss/ss10.png)
 
-### Example 3: Manually Adjusting Scores in the Gradebook  
-```python
-from nbgrader.api import Gradebook
+### Collecting the assignment
+Once the student submits the assignment, you can collect it by clicking on the highlighted button. This will reduce your work of manually collecting every assignment from each student.
+![](./assets/ss/ss11.png)
 
-gb = Gradebook("sqlite:///gradebook.db")
-
-# Fetch student submission
-submission = gb.find_submission("assignment_1", "student_1")
-
-# Update score
-submission.score = 85
-
-# Save changes
-gb.commit()
-```
-
-### Example 4: Adding a Custom Test Case  
-```python
-# Define a function to test
-def multiply(a, b):
-    return a * b
-
-# Custom test case
-assert multiply(4, 5) == 20
-```
-
-### Example 5: Exporting Grades to CSV  
-```bash
-# Export grades to a CSV file
-nbgrader export --to=grades.csv
-```
-
+### Grading and generating feedback for the assignment
+Then, you can autograde/generate feedback/release feedback of the assignment by clicking on the highlighted button(s). Orange for autograde, green for generating feedback, and purple for releasing feedback. [Source of image](https://www.youtube.com/watch?v=IXWrOyWZ0v0)
+![](./assets/ss/ss12.png)
 ## **Use Cases**
 
 ### 1. University Courses  
