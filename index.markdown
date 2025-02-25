@@ -7,7 +7,7 @@ categories: [Jupyter, Grading, Automation]
 permalink: /
 ---
 
-## Introduction  
+## **Introduction**  
 
 Grading assignments in Jupyter Notebooks manually can be a tedious and inconsistent process. **Nbgrader** is an open-source tool designed to automate grading while still allowing manual feedback when necessary. It is widely used in educational settings, particularly for large-scale courses where efficiency and accuracy are critical.  
 
@@ -20,7 +20,7 @@ With features like **auto-grading, assignment distribution,** and **seamless int
 
 For a complete guide and tutorials, visit the official nbgrader documentation: [nbgrader.readthedocs.io](https://nbgrader.readthedocs.io/)  
 
-## Installation & Setup  
+## **Installation & Setup**
 
 ### Prerequisites  
 - Python (>=3.6)  
@@ -33,13 +33,16 @@ Install nbgrader via pip:
 ```bash
 pip install nbgrader
 ```
-
-Enable nbgrader extensions for Jupyter Notebook:
+Or if you use [Jupyter Notebook](https://jupyter.org/) via [Anaconda](https://www.anaconda.com/download):
 
 ```bash
-jupyter nbextension install --sys-prefix --symlink --overwrite --nbextensions nbgrader --py
-jupyter nbextension enable --sys-prefix --py nbgrader
+conda install -c conda-forge nbgrader
 ```
+
+
+![](./assets/ss/ss1.png)
+
+![](./assets/ss/ss2.png)
 
 Configure nbgrader:
 
@@ -49,7 +52,7 @@ nbgrader quickstart my_course
 
 This sets up the necessary directory structure for an nbgrader course.  
 
-## Key Features & Explanation  
+## **Key Features & Explanation**
 
 ### 1. Automated Grading  
 Nbgrader allows instructors to create assignments with test cases that automatically evaluate student responses. This eliminates manual checking for objective questions, reducing grading time.  
@@ -101,7 +104,7 @@ nbgrader autograde problem_set_1 --force
 ### 6. Plagiarism Detection  
 Nbgrader can be combined with external tools like **Turnitin** or **MOSS** for academic integrity verification.  
 
-## Code Examples  
+## **Code Examples**
 
 ### Example 1: Creating an Auto-Graded Question  
 ```python
@@ -154,7 +157,7 @@ assert multiply(4, 5) == 20
 nbgrader export --to=grades.csv
 ```
 
-## Use Cases  
+## **Use Cases**
 
 ### 1. University Courses  
 Used in university settings to evaluate large numbers of student assignments efficiently.  
@@ -174,15 +177,14 @@ Provides structured exercises with real-world datasets.
 ### 6. Research and Lab Work  
 Useful in scientific research and lab courses where experiments require structured assessment.  
 
-## Conclusion  
+## **Conclusion**  
 
 Overall, **nbgrader** is a powerful tool for automating assignment grading in Jupyter Notebooks. Its structured workflow simplifies assignment creation, collection, and evaluation, making it particularly useful for large-scale educational settings.  
 
 While nbgrader excels in auto-grading, its full potential is realized when integrated with other Python libraries, allowing for more sophisticated assessments. Its seamless integration with **JupyterHub** makes it a practical choice for scalable assessment solutions.  
 
-## References & Further Reading  
+## **References & Further Reading**  
 
 - [Nbgrader documentation](https://nbgrader.readthedocs.io/en/stable/)  
-- [Nbgrader GitHub repository](https://github.com/jupyter/nbgrader)  
 - [JupyterHub: Multi-User Jupyter Environments](https://jupyterhub.readthedocs.io/en/stable/)  
 - [Jupyter Notebook Extensions](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/)  
